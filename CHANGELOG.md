@@ -1,6 +1,8 @@
 ## 0.2.3
-
-* Update Android build to Java 21.
+* **Android:** Switched to JDK 21 build (Gradle 8.7 / AGP 8.5.2)
+* Enabled core‑library desugaring to support API 19 → 34
+* Raised `meta` dependency to ^1.16.0
+* Example app now targets SDK 35
 
 ## 0.2.2
 
