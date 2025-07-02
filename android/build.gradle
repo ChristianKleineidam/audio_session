@@ -33,7 +33,7 @@ rootProject.allprojects {
 
 project.getTasks().withType(JavaCompile) {
     options.compilerArgs.addAll(args)
-}
+}                // end of def args … block
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
