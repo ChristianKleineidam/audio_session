@@ -18,4 +18,5 @@ Podfile.lock
 gradlew
 gradlew.bat
 .build/
+flutter-sdk/
 **/.cxx/

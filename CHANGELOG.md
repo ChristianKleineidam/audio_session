@@ -1,3 +1,7 @@
+## 0.2.3
+
+* Update Android build to Java 21.
+
 ## 0.2.2
 
 * Run setCategory in a thread on iOS to avoid jank (@MinseokKang003).
