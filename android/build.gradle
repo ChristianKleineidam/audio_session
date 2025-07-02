@@ -1,5 +1,11 @@
-group = "com.ryanheise.audio_session"
-version "1.0"
+group   = "com.ryanheise.audio_session"
+version = "1.0"          // ← adjust if you publish a different tag
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
+}
 def args = ["-Xlint:deprecation","-Xlint:unchecked"]
 
 buildscript {
@@ -27,7 +33,7 @@ rootProject.allprojects {
 
 project.getTasks().withType(JavaCompile) {
     options.compilerArgs.addAll(args)
-}
+}                // end of def args … block
 
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
@@ -40,6 +46,8 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_21
         targetCompatibility = JavaVersion.VERSION_21
+        // ▶ enable Java-21 APIs on API 19+
+        coreLibraryDesugaringEnabled true
     }
 
     kotlinOptions {
@@ -59,5 +67,7 @@ android {
 
 dependencies {
     implementation "androidx.media:media:1.7.0"
-    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation "androidx.core:core-ktx:1.13.1"
+    // ▶ desugaring runtime for old devices
+    coreLibraryDesugaring "com.android.tools:desugar_jdk_libs:2.0.0"
 }
